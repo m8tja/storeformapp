@@ -1,0 +1,81 @@
+<div class="container">
+    <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)" id="form">
+        <div class="form-group">
+            <label for="name">Store name</label><br>
+            <select [(ngModel)]="selected" id="inputs-id" name="name"(change)="onSelectChange()" class="form-control">
+                <option *ngFor="let s of storeArray"  [value]="s.name">{{ s.name }} </option>
+            </select>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="store-address">Store address</label><br>
+            <input id="inputs-id" name="store-address" value="{{ selectedAddress }}" readonly class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="store-number">Store number</label><br>
+            <input id="inputs-id" name="store-number" value="{{ selectedPhone }}" readonly class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="date">Date</label><br>
+            <input [(ngModel)]="today" id="inputs-id" name="date" type="text" value="{{ today }}" readonly class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="served_by">Served By</label><br>
+            <input ngModel id="inputs-id" name="served_by" type="text" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input ngModel id="inputs-id" name="email" type="email" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="sport-package">Sport Package</label><br>
+            <input ngModel id="inputs-id" name="sport-package" type="date" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="bt_broadband">BT Broadband</label><br>
+            <input ngModel id="inputs-id" name="bt_broadband" type="text" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="bttv_package">BT TV Package</label><br>
+            <input ngModel id="inputs-id" name="bttv_package" type="text" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="monthly_charge">Monthly Charge</label><br>
+            <input ngModel id="inputs-id" name="monthly_charge" type="number" min="1" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="upfront_fee">Upfront Fee</label><br>
+            <input ngModel id="inputs-id" name="upfront_fee" type="number" min="0" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="payment_installments">Payment Installments</label><br>
+            <select ngModel id="inputs-id" name="payment_installments" required class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="handy_information">Other Handy Information</label><br>
+            <input ngModel id="inputs-id" name="handy_information" type="text" maxlength="50" required class="form-control">
+        </div>
+        <pre></pre>
+        <div class="buttons">
+            <button [disabled]="addForm.invalid" type="submit" id="btn-submit">Submit</button>
+            <button type="button" (click)="onReset(addForm)" id="btn-reset">Reset</button>
+        </div>
+    </form>
+</div>

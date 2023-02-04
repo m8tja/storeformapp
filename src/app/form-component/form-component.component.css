@@ -1,0 +1,17 @@
+
+.container {
+    text-align: center;
+}
+
+#date-today {
+    text-align: center;
+}
+
+#form {
+    padding: 50px;
+}
+
+#inputs-id {
+    text-align: center;
+    width: 30%;
+}
